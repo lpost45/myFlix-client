@@ -11,22 +11,23 @@ export const MainView = () => {
         fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/movies")
             .then((response) => response.json())
             .then((data) => {
-                if (data.docs && Array.isArray(data.docs)) {
-                    const moviesFromApi = data.docs.map((doc) => {
+                // if (data.docs && Array.isArray(data.docs)) {
+                    const moviesFromApi = data.map((doc) => {
                         return {
                             id: doc.key,
-                            title: doc.title,
-                            description: doc.description,
-                            genre: doc.genre,
-                            director: doc.director,
-                            image: doc.image,
-                            featured: doc.featured
+                            title: doc.Title,
+                            director: doc.Director,
+                            genre: doc.Genre,
+                            image: doc.ImagePath,
+                            description: doc.Description
                         };
                     });
                     setMovies(moviesFromApi);
-                } else {
-                    console.error('Unexpected API response', data);
-                }
+                
+                //}
+                // else {
+                //     console.error('Unexpected API response', data);
+                // }
             });
     }, []);
 
