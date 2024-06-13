@@ -27423,7 +27423,7 @@ const MainView = ()=>{
                 onMovieClick: (newSelectedMovie)=>{
                     setSelectedMovie(newSelectedMovie);
                 }
-            }, movie.id, false, {
+            }, movie._id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 47,
                 columnNumber: 17
@@ -27506,14 +27506,14 @@ MovieCard.propTypes = {
         description: (0, _propTypesDefault.default).string.isRequired,
         image: (0, _propTypesDefault.default).string.isRequired,
         director: (0, _propTypesDefault.default).shape({
-            name: (0, _propTypesDefault.default).string.isRequired,
-            bio: (0, _propTypesDefault.default).string.isRequired,
-            birth: (0, _propTypesDefault.default).string,
-            death: (0, _propTypesDefault.default).string
+            Name: (0, _propTypesDefault.default).string.isRequired,
+            Bio: (0, _propTypesDefault.default).string.isRequired,
+            Birth: (0, _propTypesDefault.default).string,
+            Death: (0, _propTypesDefault.default).string
         }),
         genre: (0, _propTypesDefault.default).shape({
-            name: (0, _propTypesDefault.default).string.isRequired,
-            description: (0, _propTypesDefault.default).string.isRequired
+            Name: (0, _propTypesDefault.default).string.isRequired,
+            Description: (0, _propTypesDefault.default).string.isRequired
         }),
         featured: (0, _propTypesDefault.default).bool
     }).isRequired,
