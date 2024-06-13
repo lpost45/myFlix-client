@@ -18,14 +18,14 @@ MovieCard.propTypes = {
         description: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
         director: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            bio: PropTypes.string.isRequired,
-            birth: PropTypes.string,
-            death: PropTypes.string
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Birth: PropTypes.string,
+            Death: PropTypes.string
         }),
         genre: PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            description: PropTypes.string.isRequired
+            Name: PropTypes.string.isRequired,
+            Description: PropTypes.string.isRequired
         }),
         featured: PropTypes.bool
     }).isRequired,
