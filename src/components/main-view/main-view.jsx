@@ -1,30 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card.jsx";
 import { MovieView } from "../movie-view/movie-view.jsx";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-        {
-            id: 1,
-            title: "The Shawshank Redemption",
-            image: "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
-            director: "Frank Darabont"
-        },
-        {
-            id: 2,
-            title: "The Godfather",
-            image: "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
-            director: "Francis Ford Coppola"
-        },
-        {
-            id: 3,
-            title: "The Godfather Part 2",
-            image: "https://upload.wikimedia.org/wikipedia/en/0/03/Godfather_part_ii.jpg",
-            director: "Francis Ford Coppola"
-        }
-    ]);
+    const [movies, setMovies] = useState([]);
 
     const [selectedMovie, setSelectedMovie] = useState(null);
+
+    useEffect(() => {
+        fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/movies")
+            .then((response) => response.json())
+            .then((data) => {
+                // if (data.docs && Array.isArray(data.docs)) {
+                    const moviesFromApi = data.map((doc) => {
+                        return {
+                            id: doc.key,
+                            title: doc.Title,
+                            director: doc.Director,
+                            genre: doc.Genre,
+                            image: doc.ImagePath,
+                            description: doc.Description
+                        };
+                    });
+                    setMovies(moviesFromApi);
+                
+                //}
+                // else {
+                //     console.error('Unexpected API response', data);
+                // }
+            });
+    }, []);
 
     if (selectedMovie) {
         return (
@@ -40,7 +45,7 @@ export const MainView = () => {
         <div>
             {movies.map((movie) => (
                 <MovieCard 
-                    key={movie.id} 
+                    key={movie._id} 
                     movie={movie}
                     onMovieClick={(newSelectedMovie) => {
                         setSelectedMovie(newSelectedMovie);
