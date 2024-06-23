@@ -1,7 +1,7 @@
 import{ useState } from "react";
 
 export const SignupView = () => {
-    const [username, setUsername] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
@@ -10,10 +10,10 @@ export const SignupView = () => {
         event.preventDefault();
 
         const data = {
-            username: username,
-            password: password,
-            email: email,
-            birthday: birthday
+            Name: name,
+            Password: password,
+            Email: email,
+            Birthday: birthday
         };
 
         fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/users", {
@@ -38,8 +38,8 @@ export const SignupView = () => {
             Username:
             <input
                 type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
                 minLength="3"
             />    
