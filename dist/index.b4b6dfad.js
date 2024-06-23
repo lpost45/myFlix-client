@@ -28476,12 +28476,12 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
 const LoginView = ()=>{
     _s();
-    const [username, setUsername] = (0, _react.useState)("");
+    const [name, setName] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const handleSubmit = (event)=>{
         event.prevenDefault();
         const data = {
-            access: username,
+            access: name,
             secret: password
         };
         fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/login", {
@@ -28509,8 +28509,8 @@ const LoginView = ()=>{
                     "Username:",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value),
+                        value: name,
+                        onChange: (e)=>setName(e.target.value),
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
@@ -28557,7 +28557,7 @@ const LoginView = ()=>{
         columnNumber: 7
     }, undefined);
 };
-_s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
+_s(LoginView, "Q3D0qnZ9tttG8x/WlHuqXUGjTo0=");
 _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
