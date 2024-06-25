@@ -28474,7 +28474,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const LoginView = ()=>{
+const LoginView = ({ onLoggedIn })=>{
     _s();
     const [name, setName] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
@@ -28511,7 +28511,8 @@ const LoginView = ()=>{
                         type: "text",
                         value: name,
                         onChange: (e)=>setName(e.target.value),
-                        required: true
+                        required: true,
+                        minLength: "3"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 41,
@@ -28533,13 +28534,13 @@ const LoginView = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 51,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 48,
+                lineNumber: 49,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28547,7 +28548,7 @@ const LoginView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 57,
+                lineNumber: 58,
                 columnNumber: 9
             }, undefined)
         ]
