@@ -28479,10 +28479,10 @@ const LoginView = ()=>{
     const [name, setName] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const handleSubmit = (event)=>{
-        event.prevenDefault();
+        event.preventDefault();
         const data = {
-            access: name,
-            secret: password
+            Name: name,
+            Password: password
         };
         fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/login", {
             method: "POST",
