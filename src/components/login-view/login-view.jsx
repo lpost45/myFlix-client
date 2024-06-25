@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const LoginView = () => {
+export const LoginView = ({ onLoggedIn }) => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
     const handleSubmit = (event) => {
@@ -43,6 +43,7 @@ export const LoginView = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            minLength="3"
             />
         </label>
         <label>
