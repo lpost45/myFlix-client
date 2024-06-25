@@ -8,8 +8,8 @@ export const LoginView = () => {
         event.preventDefault();
 
         const data = {
-            access: name,
-            secret: password
+            Name: name,
+            Password: password
         };
 
         fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/login", {
