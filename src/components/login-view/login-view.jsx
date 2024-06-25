@@ -5,7 +5,7 @@ export const LoginView = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
     const handleSubmit = (event) => {
-        event.prevenDefault();
+        event.preventDefault();
 
         const data = {
             access: name,
