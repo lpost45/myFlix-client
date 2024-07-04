@@ -46,7 +46,7 @@ export const MainView = () => {
     }, [token]);
 
     return (
-        <Row >
+        <Row className="justify-content-md-center">
             {!user ? (
                 <Col md={5}>
                     <LoginView onLoggedIn={(user, token) => {
