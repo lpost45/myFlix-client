@@ -27594,6 +27594,13 @@ const MovieCard = ({ movie, onMovieClick })=>{
                         lineNumber: 10,
                         columnNumber: 17
                     }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                        children: movie.director.Name
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 11,
+                        columnNumber: 17
+                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                         onClick: ()=>onMovieClick(movie),
                         variant: "link",
