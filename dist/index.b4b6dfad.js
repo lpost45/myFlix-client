@@ -27669,7 +27669,7 @@ var _cardDefault = parcelHelpers.interopDefault(_card);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _reactRouterDom = require("react-router-dom");
-const MovieCard = ({ movie, onMovieClick })=>{
+const MovieCard = ({ movie })=>{
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
     const addFav = ()=>{
