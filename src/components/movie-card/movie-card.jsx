@@ -15,7 +15,7 @@ export const MovieCard = ({ movie }) => {
             }
         })
         .then((response) => response.json())
-        .then(movies => {
+        .then(movie => {
             alert("Movie added")
         })
         .catch(e => console.log(e))
@@ -29,7 +29,7 @@ export const MovieCard = ({ movie }) => {
             }
         })
             .then((response) => response.json())
-            .then(movies => {
+            .then(movie => {
                 alert("Movie deleted")
             })
             .catch(e => console.log(e))
