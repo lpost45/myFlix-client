@@ -27679,7 +27679,7 @@ const MovieCard = ({ movie })=>{
                 Authorization: "Bearer ${token}",
                 "Content-Type": "application/json"
             }
-        }).then((response)=>response.json()).then((movies)=>{
+        }).then((response)=>response.json()).then((movie)=>{
             alert("Movie added");
         }).catch((e)=>console.log(e));
     };
@@ -27690,7 +27690,7 @@ const MovieCard = ({ movie })=>{
                 Authorization: "Bearer ${token}",
                 "Content-Type": "application/json"
             }
-        }).then((response)=>response.json()).then((movies)=>{
+        }).then((response)=>response.json()).then((movie)=>{
             alert("Movie deleted");
         }).catch((e)=>console.log(e));
     };
