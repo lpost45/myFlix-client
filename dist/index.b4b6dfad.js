@@ -36985,7 +36985,7 @@ var _s = $RefreshSig$();
 const MovieView = ({ movie })=>{
     _s();
     const { movieId } = (0, _reactRouter.useParams)();
-    const movie = movie.find((m)=>m._id === movieId);
+    const selectedMovie = movie.find((m)=>m._id === movieId);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38131,11 +38131,20 @@ const NavigationBar = ({ user, onLoggedOut })=>{
                                         columnNumber: 33
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/profile",
+                                        children: "Profile"
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation-bar/navigation-bar.jsx",
+                                        lineNumber: 29,
+                                        columnNumber: 33
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                         onClick: onLoggedOut,
                                         children: "Logout"
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 29,
+                                        lineNumber: 30,
                                         columnNumber: 33
                                     }, undefined)
                                 ]
@@ -42576,7 +42585,7 @@ const ProfileView = ({ movies })=>{
     _s();
     const localUser = JSON.parse(localStorage.getItem("user"));
     const favoriteMovies = movies.filter((m)=>{
-        return localUser.FavoriteMovies.includes(m._id);
+        return localUser.favoriteMovies.includes(m._id);
     });
     const [name, setName] = (0, _react.useState)(localUser.Name || "");
     const [password, setPassword] = (0, _react.useState)(localUser.Password || "");
