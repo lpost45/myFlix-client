@@ -1,10 +1,10 @@
-import React from "react";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom"
 
 export const MovieCard = ({ movie }) => {
+    console.log(movie)
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
     const addFav = () => {
@@ -41,7 +41,7 @@ export const MovieCard = ({ movie }) => {
             <Card.Body>
                 <Card.Title>{movie.title}</Card.Title>
                 <Card.Text>{movie.director.Name}</Card.Text>
-                <Link to={'/movies/${encodeURIComponent(movie._id)}'}>
+                <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
                     <Button variant="link">Open</Button>
                 </Link>
                 <Button onClick={addFav}>

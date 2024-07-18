@@ -29,7 +29,7 @@ export const MainView = () => {
                 // if (data.docs && Array.isArray(data.docs)) {
                     const moviesFromApi = data.map((doc) => {
                         return {
-                            id: doc.key,
+                            id: doc._id,
                             title: doc.Title,
                             director: doc.Director,
                             genre: doc.Genre,

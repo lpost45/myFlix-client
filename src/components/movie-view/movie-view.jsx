@@ -1,15 +1,15 @@
 import { useParams } from "react-router"
 import { Link } from "react-router-dom";
 
-export const MovieView = ({ movie }) => {
+export const MovieView = ({ movies }) => {
     const { movieId } = useParams();
 
-    const selectedMovie = movie.find((m) => m._id === movieId);
-    
+    const movie = movies.find((m) => m.id === movieId);
+    console.log(location.href.split("/movies").slice(0, -1).join("/"))
     return (
         <div>
             <div>
-                <img className="w-100" src={movie.image} />
+                <img className="w-100" src={location.href.split("/movies").slice(0, -1).join("/") + "/" + movie.image} />
             </div>
             <div>
                 <span>Title: </span>

@@ -6,7 +6,7 @@ import { MovieCard } from "../movie-card/movie-card";
 export const ProfileView = ({ movies }) => {
     const localUser = JSON.parse(localStorage.getItem("user"));
     const favoriteMovies = movies.filter((m) => {
-        return localUser.favoriteMovies.includes(m._id);
+        return localUser.favoriteMovies.includes(m.id);
     });
 
     const [name, setName] = useState(localUser.Name||"");
@@ -94,5 +94,5 @@ export const ProfileView = ({ movies }) => {
                 ))
             }
         </Form>
-    )
-}
+    );
+};
