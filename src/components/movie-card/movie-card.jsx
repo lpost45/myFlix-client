@@ -8,7 +8,7 @@ export const MovieCard = ({ movie }) => {
     const token = localStorage.getItem("token");
     const user = JSON.parse(localStorage.getItem("user"));
     const addFav = () => {
-        fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/${movie._id}", {
+        fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "POST",
             headers: {
                 Authorization: 'Bearer ${token}',
@@ -22,7 +22,7 @@ export const MovieCard = ({ movie }) => {
         .catch(e => console.log(e))
     }
     const removeFav = () => {
-        fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/${movie._id}", {
+        fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "DELETE",
             headers: {
                 Authorization: 'Bearer ${token}',
