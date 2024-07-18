@@ -11,7 +11,7 @@ export const MovieCard = ({ movie }) => {
         fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "POST",
             headers: {
-                Authorization: 'Bearer ${token}',
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
             }
         })
@@ -25,7 +25,7 @@ export const MovieCard = ({ movie }) => {
         fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "DELETE",
             headers: {
-                Authorization: 'Bearer ${token}',
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
             }
         })
