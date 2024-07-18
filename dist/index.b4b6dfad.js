@@ -27509,7 +27509,7 @@ const MovieCard = ({ movie })=>{
         fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "POST",
             headers: {
-                Authorization: "Bearer ${token}",
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"
             }
         }).then((response)=>response.json()).then((movie)=>{
@@ -27520,7 +27520,7 @@ const MovieCard = ({ movie })=>{
         fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users/${user.Name}/movies/${movie.id}`, {
             "method": "DELETE",
             headers: {
-                Authorization: "Bearer ${token}",
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"
             }
         }).then((response)=>response.json()).then((movie)=>{
@@ -42587,7 +42587,7 @@ const ProfileView = ({ movies })=>{
     _s();
     const localUser = JSON.parse(localStorage.getItem("user"));
     const favoriteMovies = movies.filter((m)=>{
-        return localUser.favoriteMovies.includes(m.id);
+        return localUser.FavMovies.includes(m.id);
     });
     const [name, setName] = (0, _react.useState)(localUser.Name || "");
     const [password, setPassword] = (0, _react.useState)(localUser.Password || "");
@@ -42601,7 +42601,7 @@ const ProfileView = ({ movies })=>{
             Email: email,
             Birthday: birthday
         };
-        fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/users", {
+        fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users`, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
