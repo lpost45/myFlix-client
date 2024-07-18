@@ -6,7 +6,7 @@ import { MovieCard } from "../movie-card/movie-card";
 export const ProfileView = ({ movies }) => {
     const localUser = JSON.parse(localStorage.getItem("user"));
     const favoriteMovies = movies.filter((m) => {
-        return localUser.favoriteMovies.includes(m.id);
+        return localUser.FavMovies.includes(m.id);
     });
 
     const [name, setName] = useState(localUser.Name||"");
@@ -24,7 +24,7 @@ export const ProfileView = ({ movies }) => {
             Birthday: birthday
         };
 
-        fetch("https://logan-myflix-30a490a6c5c0.herokuapp.com/users", {
+        fetch(`https://logan-myflix-30a490a6c5c0.herokuapp.com/users`, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
