@@ -1,8 +1,15 @@
-export const MovieView = ({ movie, onBackClick }) => {
+import { useParams } from "react-router"
+import { Link } from "react-router-dom";
+
+export const MovieView = ({ movies }) => {
+    const { movieId } = useParams();
+
+    const movie = movies.find((m) => m.id === movieId);
+    console.log(location.href.split("/movies").slice(0, -1).join("/"))
     return (
         <div>
             <div>
-                <img src={movie.image} />
+                <img className="w-100" src={location.href.split("/movies").slice(0, -1).join("/") + "/" + movie.image} />
             </div>
             <div>
                 <span>Title: </span>
@@ -20,7 +27,9 @@ export const MovieView = ({ movie, onBackClick }) => {
                 <span>Description: </span>
                 <span>{movie.description}</span>
             </div>
-            <button onClick={onBackClick}>Back</button>
+            <Link to={'/'}>
+                <button className="back-button">Back</button>
+            </Link>
         </div>
     );
 };
