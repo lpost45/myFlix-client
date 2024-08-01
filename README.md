@@ -2,7 +2,7 @@
 
 ## Project
 
-This is the client side app that I built based on the API that I created in the last project. It allows users to view a list of movies as well as their details from the API, create and manage a profile. It uses React, React Bootstrap, and React router.
+This is the client side app that I built based on the API that I created in the last project. It allows users to view a list of movies as well as their details from the API, and create and manage a profile. It uses React, React Bootstrap, and React router.
 
 ## Link to API repository
 
