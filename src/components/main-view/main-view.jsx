@@ -15,6 +15,28 @@ export const MainView = () => {
     const [user, setUser] = useState(storedUser? storedUser : null);
     const [token, setToken] = useState(storedToken? storedToken : null)
     const [movies, setMovies] = useState([]);
+    const [searchMovie, setSearchMovie] = useState("");
+    const [filteredMovies, setFilteredMovies] = useState([]);
+
+    const handleInputChange = (e) =>{
+        const searchTerm = e.target.value;
+        setSearchMovie(searchTerm);
+    }
+
+    const emptySearch = () => {
+        setSearchMovie("");
+    }
+
+    useEffect(() => {
+        if (searchMovie === "") {
+            setFilteredMovies(movies)
+        } else {
+            const filteredList = movies.filter((movie) => {
+                return movie.title.toLowerCase().includes(searchMovie.toLowerCase());
+            });
+            setFilteredMovies(filteredList);
+        }
+    }, [searchMovie, movies]);
 
     useEffect(() => {
         if (!token) {
@@ -52,7 +74,12 @@ export const MainView = () => {
                 user={user}
                 onLoggedOut={() => {
                     setUser(null);
+                    setToken(null);
+                    localStorage.clear();
                 }}
+                emptySearch={emptySearch}
+                handleInputChange={handleInputChange}
+                searchMovie={searchMovie}
             />
             <Row className="justify-content-md-center">
                 <Routes>
@@ -110,7 +137,7 @@ export const MainView = () => {
                                     <Col>The list is empty!</Col>
                                 ) : (
                                     <>
-                                        {movies.map((movie) => (
+                                        {filteredMovies.map((movie) => (
                                             <Col className="mb-4" key={movie._id} md={3}>
                                                 <MovieCard movie={movie} />
                                             </Col>
@@ -124,7 +151,7 @@ export const MainView = () => {
                         path="/profile"
                         element={
                             <>
-                                <ProfileView movies={movies} />
+                                <ProfileView movies={filteredMovies} />
                             </>
                         }
                     />
