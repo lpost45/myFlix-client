@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Form } from "react-router-dom";
+import Form from "react-bootstrap/Form";
 
 export const NavigationBar = ({ user, onLoggedOut, emptySearch, handleInputChange, searchMovie }) => {
     return (
